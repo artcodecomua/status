@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="theme-color" content="#f5f7fa">
+    <title>Сайт временно недоступен — ArtCode</title>
+    <meta name="description" content="Информация о временной недоступности сайта в связи с аварией в дата-центре.">
+
+    <style>
+        :root {
+            --bg: #f5f7fa;
+            --surface: #ffffff;
+            --text: #20242a;
+            --muted: #68717d;
+            --accent: #2563eb;
+            --accent-hover: #1d4ed8;
+            --border: #e2e6eb;
+            --warning-bg: #fff8e6;
+            --warning-border: #f2d27a;
+            --warning-text: #745700;
+            --radius: 14px;
+            --shadow: 0 10px 35px rgb(0 0 0 / 7%);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            min-height: 100%;
+        }
+
+        body {
+            min-height: 100vh;
+            margin: 0;
+            background: var(--bg);
+            color: var(--text);
+            font-family:
+                system-ui,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                sans-serif;
+            line-height: 1.6;
+        }
+
+        .page {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            padding: 28px 20px;
+        }
+
+        .header__inner,
+        .main__inner,
+        .footer__inner {
+            width: min(100% - 40px, 760px);
+            margin-inline: auto;
+        }
+
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text);
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .brand__mark {
+            width: 34px;
+            height: 34px;
+            display: grid;
+            place-items: center;
+            border-radius: 9px;
+            background: var(--text);
+            color: #fff;
+            font-size: 15px;
+        }
+
+        .main {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            padding: 40px 0 70px;
+        }
+
+        .status {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: clamp(28px, 6vw, 52px);
+        }
+
+        .status__icon {
+            width: 58px;
+            height: 58px;
+            display: grid;
+            place-items: center;
+            margin-bottom: 24px;
+            border-radius: 50%;
+            background: var(--warning-bg);
+            border: 1px solid var(--warning-border);
+            color: var(--warning-text);
+            font-size: 27px;
+        }
+
+        .status__label {
+            margin: 0 0 8px;
+            color: var(--muted);
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: .04em;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: clamp(30px, 5vw, 44px);
+            line-height: 1.15;
+            letter-spacing: -.025em;
+        }
+
+        .status__lead {
+            max-width: 650px;
+            margin: 22px 0 0;
+            color: #3f4750;
+            font-size: 18px;
+        }
+
+        .notice {
+            margin-top: 30px;
+            padding: 18px 20px;
+            border-left: 4px solid var(--warning-border);
+            border-radius: 8px;
+            background: var(--warning-bg);
+            color: var(--warning-text);
+        }
+
+        .notice p {
+            margin: 0;
+        }
+
+        .details {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 14px;
+            margin-top: 30px;
+        }
+
+        .details__item {
+            padding: 16px 18px;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+        }
+
+        .details__label {
+            display: block;
+            margin-bottom: 4px;
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        .details__value {
+            font-weight: 600;
+        }
+
+        .status__actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 32px;
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 44px;
+            padding: 9px 18px;
+            border-radius: 9px;
+            font-size: 15px;
+            font-weight: 600;
+            text-decoration: none;
+            transition:
+                background-color .15s ease,
+                border-color .15s ease;
+        }
+
+        .button--primary {
+            background: var(--accent);
+            color: #fff;
+        }
+
+        .button--primary:hover {
+            background: var(--accent-hover);
+        }
+
+        .button--secondary {
+            border: 1px solid var(--border);
+            background: var(--surface);
+            color: var(--text);
+        }
+
+        .button--secondary:hover {
+            border-color: #c4cbd3;
+            background: #f8f9fa;
+        }
+
+        .footer {
+            padding: 24px 20px 30px;
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        .footer__inner {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .header {
+                padding-top: 20px;
+            }
+
+            .header__inner,
+            .main__inner,
+            .footer__inner {
+                width: min(100% - 28px, 760px);
+            }
+
+            .main {
+                padding: 20px 0 40px;
+            }
+
+            .status {
+                padding: 28px 22px;
+            }
+
+            .status__lead {
+                font-size: 16px;
+            }
+
+            .details {
+                grid-template-columns: 1fr;
+            }
+
+            .status__actions {
+                flex-direction: column;
+            }
+
+            .button {
+                width: 100%;
+            }
+
+            .footer__inner {
+                flex-direction: column;
+                gap: 6px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<div class="page">
+
+    <header class="header">
+        <div class="header__inner">
+            <a class="brand" href="https://artcode.com.ua/" aria-label="ArtCode — на главную">
+                <span class="brand__mark" aria-hidden="true">A</span>
+                <span>ArtCode</span>
+            </a>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="main__inner">
+            <article class="status">
+                <div class="status__icon" aria-hidden="true">!</div>
+
+                <p class="status__label">Временная недоступность</p>
+
+                <h1>Сайт временно недоступен</h1>
+
+                <p class="status__lead">
+                    Сейчас мы не можем предоставить доступ к сайту из-за
+                    аварийного отключения инфраструктуры дата-центра в Киеве.
+                </p>
+
+                <aside class="notice">
+                    <p>
+                        По предварительной информации, оборудование, на котором
+                        размещены сайты, не повреждено. Инфраструктура дата-центра
+                        временно отключена после происшествия в городе.
+                    </p>
+                </aside>
+
+                <div class="details">
+                    <div class="details__item">
+                        <span class="details__label">Статус</span>
+                        <span class="details__value">Ожидаем восстановления работы инфраструктуры</span>
+                    </div>
+
+                    <div class="details__item">
+                        <span class="details__label">Последнее обновление</span>
+                        <time class="details__value" datetime="2026-09-23">
+                            23 сентября 2026
+                        </time>
+                    </div>
+                </div>
+
+            </article>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__inner">
+            <span>ArtCode — разработка и продвижение сайтов</span>
+            <span>Информация обновляется по мере поступления данных.</span>
+        </div>
+    </footer>
+
+</div>
+</body>
+</html>
